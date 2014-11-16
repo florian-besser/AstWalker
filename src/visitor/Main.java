@@ -36,6 +36,7 @@ public class Main {
 
 		final CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
+		cu.accept(new DebugVisitor(cu));
 		cu.accept(new WrongLogClassVisitor());
 
 	}
